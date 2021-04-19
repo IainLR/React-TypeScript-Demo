@@ -25,10 +25,16 @@ export const Child = ({ color, onClick }: ChildProps) => {
 // <ChildProps> tells TS the Child will recieve a type of
 // 'ChildProps'
 // .FC is short for .FunctionComponent. Interchangable
-export const ChildAsFC: React.FC<ChildProps> = ({ color, onClick }) => {
+// Also allows us to use children prop
+export const ChildAsFC: React.FC<ChildProps> = ({
+  color,
+  onClick,
+  children,
+}) => {
   return (
     <div>
       {color}
+      {children}
       <button onClick={onClick}>Click</button>
     </div>
   )
